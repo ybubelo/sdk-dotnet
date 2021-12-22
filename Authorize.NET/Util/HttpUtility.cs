@@ -45,7 +45,9 @@ namespace AuthorizeNet.Util
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
 	    var postUrl = GetPostUrl(env);
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
             var webRequest = (HttpWebRequest) WebRequest.Create(postUrl);
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
             webRequest.Method = "POST";
             webRequest.ContentType = "text/xml";
             webRequest.KeepAlive = true;

@@ -11,8 +11,7 @@ namespace AuthorizeNet
     /// </summary>
     public class CryptoRandom
     {
-        private RNGCryptoServiceProvider _rng =
-        new RNGCryptoServiceProvider();
+        private RandomNumberGenerator _rng = RandomNumberGenerator.Create();
         private byte[] _uint32Buffer = new byte[4];
 
         public CryptoRandom() { }

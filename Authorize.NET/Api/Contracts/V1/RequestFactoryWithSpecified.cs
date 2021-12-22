@@ -28,7 +28,9 @@
         {
             if (null != argument)
             {
+#pragma warning disable CS8073 // The result of the expression is always the same since a value of this type is never equal to 'null'
                 if (argument.expirationTimeStamp!=null) { argument.expirationTimeStampSpecified = true; }
+#pragma warning restore CS8073 // The result of the expression is always the same since a value of this type is never equal to 'null'
             }
         }
 		
@@ -401,7 +403,9 @@
             {
                 if (argument.discountAmount >= 0) { argument.discountAmountSpecified = true; }
                 if (argument.taxIsAfterDiscount) { argument.taxIsAfterDiscountSpecified = true; }
+#pragma warning disable CS8073 // The result of the expression is always the same since a value of this type is never equal to 'null'
                 if (null != argument.purchaseOrderDateUTC) { argument.purchaseOrderDateUTCSpecified = true; }
+#pragma warning restore CS8073 // The result of the expression is always the same since a value of this type is never equal to 'null'
             }
         }
         public static void orderExType(orderExType argument)

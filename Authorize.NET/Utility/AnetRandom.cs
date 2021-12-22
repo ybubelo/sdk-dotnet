@@ -8,7 +8,7 @@ namespace AuthorizeNet.Utility
         private const int BufferSize = 1024;  // must be a multiple of 4
         private readonly byte[] randomBuffer;
         private int bufferOffset;
-        private readonly RNGCryptoServiceProvider rngCryptoServiceProvider;
+        private readonly RandomNumberGenerator rngCryptoServiceProvider;
         private readonly int seed;
 
         public AnetRandom() : this(0)
@@ -19,7 +19,7 @@ namespace AuthorizeNet.Utility
         {
             this.seed = seed;
             randomBuffer = new byte[BufferSize];
-            rngCryptoServiceProvider = new RNGCryptoServiceProvider();
+            rngCryptoServiceProvider = RandomNumberGenerator.Create();
             bufferOffset = randomBuffer.Length;
         }
 
